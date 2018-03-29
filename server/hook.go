@@ -252,6 +252,29 @@ func PostHook(c *gin.Context) {
 	// get the previous build so that we can send
 	// on status change notifications
 	last, _ := store.GetBuildLastBefore(c, repo, build.Branch, build.ID)
+	lastOnRef, _ := store.GetBuildRefLastBefore(c, repo, build.Ref, build.ID)
+
+	config := ToConfig(c)
+
+	// If we have enabled killing pending jobs for the same branch, look at the state
+	// of the last build, force killing in the same method a zombie proc would be cleaned up
+	if config.Experimental.AutoCancelPending {
+		if lastOnRef.Status == model.StatusPending {
+			procs, err := store.FromContext(c).ProcList(lastOnRef)
+			if err == nil {
+				ForceKillBuild(c, lastOnRef, procs)
+			}
+		}
+	}
+
+	// If we have enabled killing running jobs for the same branch, look at the state
+	// of the last build, killing it in the same method that cancelling build uses
+	if config.Experimental.AutoCancelRunning {
+		proc, err := store.FromContext(c).ProcFind(lastOnRef, 1)
+		if err == nil && proc.State == model.StatusRunning {
+			KillRunningBuild(c, proc)
+		}
+	}
 
 	//
 	// BELOW: NEW

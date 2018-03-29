@@ -80,6 +80,9 @@ type Store interface {
 	// GetBuildLastBefore gets the last build before build number N.
 	GetBuildLastBefore(*model.Repo, string, int64) (*model.Build, error)
 
+	// GetBuildRefBefore gets the last build before build number N by ref.
+	GetBuildRefLastBefore(*model.Repo, string, int64) (*model.Build, error)
+
 	// GetBuildList gets a list of builds for the repository
 	GetBuildList(*model.Repo, int) ([]*model.Build, error)
 
@@ -235,6 +238,10 @@ func GetBuildLast(c context.Context, repo *model.Repo, branch string) (*model.Bu
 
 func GetBuildLastBefore(c context.Context, repo *model.Repo, branch string, number int64) (*model.Build, error) {
 	return FromContext(c).GetBuildLastBefore(repo, branch, number)
+}
+
+func GetBuildRefLastBefore(c context.Context, repo *model.Repo, ref string, number int64) (*model.Build, error) {
+	return FromContext(c).GetBuildRefLastBefore(repo, ref, number)
 }
 
 func GetBuildList(c context.Context, repo *model.Repo, page int) ([]*model.Build, error) {

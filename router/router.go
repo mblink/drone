@@ -34,6 +34,7 @@ func Load(mux *httptreemux.ContextMux, middleware ...gin.HandlerFunc) http.Handl
 
 	e := gin.New()
 	e.Use(gin.Recovery())
+	e.Use(gin.Logger())
 
 	e.Use(header.NoCache)
 	e.Use(header.Options)

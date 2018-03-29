@@ -500,6 +500,19 @@ var flags = []cli.Flag{
 		Name:   "keepalive-min-time",
 		Usage:  "server-side enforcement policy on the minimum amount of time a client should wait before sending a keepalive ping.",
 	},
+	//
+	// experimental parameters
+	//
+	cli.BoolFlag{
+		EnvVar: "DRONE_EXPERIMENTAL_AUTO_CANCEL_PENDING",
+		Name:   "experimental-auto-cancel-pending",
+		Usage:  "automatically cancel pending builds for same branch",
+	},
+	cli.BoolFlag{
+		EnvVar: "DRONE_EXPERIMENTAL_AUTO_CANCEL_RUNNING",
+		Name:   "experimental-auto-cancel-running",
+		Usage:  "automatically cancel running builds for same branch",
+	},
 }
 
 func server(c *cli.Context) error {

@@ -59,6 +59,12 @@ func (db *datastore) GetBuildLastBefore(repo *model.Repo, branch string, num int
 	return build, err
 }
 
+func (db *datastore) GetBuildRefLastBefore(repo *model.Repo, ref string, num int64) (*model.Build, error) {
+	var build = new(model.Build)
+	var err = meddler.QueryRow(db, build, rebind(buildRefLastBeforeQuery), repo.ID, ref, num)
+	return build, err
+}
+
 func (db *datastore) GetBuildList(repo *model.Repo, page int) ([]*model.Build, error) {
 	var builds = []*model.Build{}
 	var err = meddler.QueryAll(db, &builds, rebind(buildListQuery), repo.ID, 50*(page-1))
@@ -170,6 +176,16 @@ SELECT *
 FROM builds
 WHERE build_repo_id = ?
   AND build_branch  = ?
+  AND build_id < ?
+ORDER BY build_number DESC
+LIMIT 1
+`
+
+const buildRefLastBeforeQuery = `
+SELECT *
+FROM builds
+WHERE build_repo_id = ?
+  AND build_ref = ?
   AND build_id < ?
 ORDER BY build_number DESC
 LIMIT 1
