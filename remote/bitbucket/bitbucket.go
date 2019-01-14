@@ -19,10 +19,10 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/drone/drone/model"
-	"github.com/drone/drone/remote"
-	"github.com/drone/drone/remote/bitbucket/internal"
-	"github.com/drone/drone/shared/httputil"
+	"github.com/mblink/drone/model"
+	"github.com/mblink/drone/remote"
+	"github.com/mblink/drone/remote/bitbucket/internal"
+	"github.com/mblink/drone/shared/httputil"
 
 	"golang.org/x/oauth2"
 )

@@ -24,7 +24,7 @@ import (
 	"strconv"
 
 	log "github.com/Sirupsen/logrus"
-	"github.com/drone/drone/model"
+	"github.com/mblink/drone/model"
 	"github.com/mrjones/oauth"
 	"strings"
 )

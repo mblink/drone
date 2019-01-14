@@ -22,7 +22,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/drone/drone/model"
+	"github.com/mblink/drone/model"
 	"github.com/gogits/go-gogs-client"
 )
 

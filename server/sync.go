@@ -17,9 +17,9 @@ package server
 import (
 	"time"
 
-	"github.com/drone/drone/model"
-	"github.com/drone/drone/remote"
-	"github.com/drone/drone/store"
+	"github.com/mblink/drone/model"
+	"github.com/mblink/drone/remote"
+	"github.com/mblink/drone/store"
 )
 
 // Syncer synces the user repository and permissions.

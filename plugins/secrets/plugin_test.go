@@ -7,7 +7,7 @@ package secrets
 import (
 	"testing"
 
-	"github.com/drone/drone/model"
+	"github.com/mblink/drone/model"
 )
 
 func TestExtends(t *testing.T) {

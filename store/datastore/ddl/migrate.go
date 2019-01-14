@@ -18,9 +18,9 @@ import (
 	"database/sql"
 	"errors"
 
-	"github.com/drone/drone/store/datastore/ddl/mysql"
-	"github.com/drone/drone/store/datastore/ddl/postgres"
-	"github.com/drone/drone/store/datastore/ddl/sqlite"
+	"github.com/mblink/drone/store/datastore/ddl/mysql"
+	"github.com/mblink/drone/store/datastore/ddl/postgres"
+	"github.com/mblink/drone/store/datastore/ddl/sqlite"
 )
 
 // Supported database drivers

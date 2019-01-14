@@ -17,7 +17,7 @@ package datastore
 import (
 	"testing"
 
-	"github.com/drone/drone/model"
+	"github.com/mblink/drone/model"
 )
 
 func TestPermFind(t *testing.T) {

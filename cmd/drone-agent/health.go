@@ -22,7 +22,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/drone/drone/version"
+	"github.com/mblink/drone/version"
 	"github.com/urfave/cli"
 )
 
@@ -48,7 +48,7 @@ func handleVersion(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(200)
 	w.Header().Add("Content-Type", "text/json")
 	json.NewEncoder(w).Encode(versionResp{
-		Source:  "https://github.com/drone/drone",
+		Source:  "https://github.com/mblink/drone",
 		Version: version.Version.String(),
 	})
 }

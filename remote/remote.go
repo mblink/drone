@@ -20,7 +20,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/drone/drone/model"
+	"github.com/mblink/drone/model"
 
 	"golang.org/x/net/context"
 )

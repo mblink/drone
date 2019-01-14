@@ -15,7 +15,7 @@
 package middleware
 
 import (
-	"github.com/drone/drone/model"
+	"github.com/mblink/drone/model"
 
 	"github.com/gin-gonic/gin"
 	"github.com/urfave/cli"
@@ -42,7 +42,7 @@ func setupConfig(c *cli.Context) *model.Settings {
 		Experimental: model.Experimental{
 			AutoCancelPending: c.Bool("experimental-auto-cancel-pending"),
 			AutoCancelRunning: c.Bool("experimental-auto-cancel-running"),
-		}
+		},
 	}
 }
 

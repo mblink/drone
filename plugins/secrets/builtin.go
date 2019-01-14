@@ -1,7 +1,7 @@
 package secrets
 
 import (
-	"github.com/drone/drone/model"
+	"github.com/mblink/drone/model"
 )
 
 type builtin struct {

@@ -18,8 +18,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/drone/drone/model"
-	"github.com/drone/drone/store/datastore/sql"
+	"github.com/mblink/drone/model"
+	"github.com/mblink/drone/store/datastore/sql"
 	"github.com/russross/meddler"
 )
 

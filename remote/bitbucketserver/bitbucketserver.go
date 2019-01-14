@@ -28,9 +28,9 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/drone/drone/model"
-	"github.com/drone/drone/remote"
-	"github.com/drone/drone/remote/bitbucketserver/internal"
+	"github.com/mblink/drone/model"
+	"github.com/mblink/drone/remote"
+	"github.com/mblink/drone/remote/bitbucketserver/internal"
 	"github.com/mrjones/oauth"
 )
 

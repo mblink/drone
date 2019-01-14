@@ -22,8 +22,8 @@ import (
 	"net/url"
 
 	"code.gitea.io/sdk/gitea"
-	"github.com/drone/drone/model"
-	"github.com/drone/drone/remote"
+	"github.com/mblink/drone/model"
+	"github.com/mblink/drone/remote"
 )
 
 // Opts defines configuration options.

@@ -15,7 +15,7 @@
 package middleware
 
 import (
-	"github.com/drone/drone/remote"
+	"github.com/mblink/drone/remote"
 	"github.com/gin-gonic/gin"
 )
 

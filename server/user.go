@@ -24,11 +24,11 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/securecookie"
 
-	"github.com/drone/drone/model"
-	"github.com/drone/drone/remote"
-	"github.com/drone/drone/router/middleware/session"
-	"github.com/drone/drone/shared/token"
-	"github.com/drone/drone/store"
+	"github.com/mblink/drone/model"
+	"github.com/mblink/drone/remote"
+	"github.com/mblink/drone/router/middleware/session"
+	"github.com/mblink/drone/shared/token"
+	"github.com/mblink/drone/store"
 )
 
 func GetSelf(c *gin.Context) {
